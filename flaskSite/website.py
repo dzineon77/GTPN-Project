@@ -10,16 +10,17 @@ APP = flask.Flask(__name__)
 def index():
     """ Displays the index page accessible at '/'
     """
-    return flask.render_template('index.html')
-
-# @APP.route('/login')
-# def hello(name):
-#     """ Displays the page greats who ever comes to visit it.
-#     """
-#     return flask.render_template('hello.html', name=name)
+    return flask.render_template('index.html', name="index")
 
 
-@APP.route('/elements')
+@APP.route('/login/')
+def login():
+    """ Displays the page greats who ever comes to visit it.
+    """
+    return flask.render_template('login.html', name="login")
+
+
+@APP.route('/elements/')
 def elements():
     """ Displays the index page accessible at '/'
     """
