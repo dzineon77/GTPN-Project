@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import flask
-
+import pandas as pd
 # Create the application.
 APP = flask.Flask(__name__)
 
@@ -27,10 +27,21 @@ def elements():
     return flask.render_template('elements.html')
 
 
+@APP.route('/shop/')
+def shopHome():
+    fo = pd.read_csv(r"C:\Users\dzine\Downloads\MVP Data  - Sheet2.csv")
+    shopUrls = fo['URLS']
+    shopContactInfo = fo['ContactInfo']
+    tempstorenames = []
+    for i in range(len(fo['URLS'])):
+        tempstorenames.append("StoreName{i}".format(i = i))
+        
+    return flask.render_template('shopHome.html', name = "shopHome", shopUrls = shopUrls, shopContactInfo = shopContactInfo, tempstorenames = tempstorenames)
+
+
 @APP.route('/shop/<name>/')
 def shop(name):
-    filename = ""
-
+        
     storedesc = "Temporary store description here"
     images = None
     itemnames = ["item1", "item2", "item3", "item4", "item5", "item6"]

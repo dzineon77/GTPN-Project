@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Bazaar - {{name}} </title>
+		<title>Bazaar - Shops </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/static/assets/css/main.css" />
@@ -35,26 +35,19 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>{{name}}</h1>
+										<h1>Shops</h1>
 									</header>
 
 									<span class="image main"><img src="/static/images/pic11.jpg" alt="" /></span>
 
-									<p>{{storedesc}}</p>
-
-									<div class="col-12">
-										<select name="pricefilter" id="demo-category">
-											<option value="">- Price -</option>
-											<option value="1">Low to High</option>
-											<option value="1">High to Low</option>
-										</select>
-									</div>
+									<p>Explore some local businesses in the area!</p>
 
 									<div class="col-12">
 										<select name="categoryfilter" id="demo-category">
 											<option value="">- Category -</option>
-											<option value="1">Accessories</option>
+											<option value="1">Restaurant</option>
 											<option value="1">Clothing</option>
+											<option value="1">Accessories</option>
 											<option value="1">Art</option>
 										</select>
 									</div>
@@ -64,19 +57,18 @@
 								<div class = "container">
 								<header class="major">
 								</br>
-									<h2>Browse {{name}}'s products here!</h2>
+									<h2>Browse stores here!</h2>
 								</header>
 							</div>
 								
 								<div class="posts">
-									{% for item in itemnames %}
+									{% for store in shopUrls %}
 									<article>
 										<a href="#" class="image"><img src="/static/images/pic01.jpg" alt="" /></a>
-										<h3>{{ itemnames[loop.index-1] }}</h3>
-										<p>{{ itemprices[loop.index-1] }}</p>
-										<p>{{ itemdesc[loop.index-1] }}</p>
+										<h3>{{ tempstorenames[loop.index-1] }}</h3>
+										<p>{{ shopContactInfo[loop.index-1] }}</p>
 										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
+											<li><a href="#" class="button">Learn More</a></li>
 										</ul>
 									</article>
 								{% endfor %}								

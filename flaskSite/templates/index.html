@@ -45,14 +45,51 @@
                     </span>
                 </section>
 
+                <!-- Section -->
                 <section>
-                <form method="post" action="#">
-                    <div class="row gtr-uniform">
-                        <div class="col-6 col-12-xsmall">
-                            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Enter City, State, or Zip" />
-                        </div>
-                    </form>
+                    <header class="major">
+                        <h2>Stores</h2>
+                    </header>
+                    <ul class="actions">
+                        <li><a href="{{ url_for('shopHome') }}" class="button">Explore all stores</a></li>
+                        </ul>
+                    <div class="posts">
+                        <article>
+                            <a href="https://himalayan-indian-grocery.business.site/" class="image"><img src="static/images/store1bg.jpg" alt="" /></a>
+                            <h3>Himalayan Grocery Store & Kitchen</h3>
+                            <p> </p>
+                            <ul class="actions">
+                            <li><a href="https://himalayan-indian-grocery.business.site/" class="button">Learn More</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="https://www.thehimalayanbazaar.com/" class="image"><img src="static/images/store2bg.jpg" alt="" /></a>
+                            <h3>The Himalayan Bazaar</h3>
+                            <p></p>
+                            <ul class="actions">
+                            <li><a href="https://www.thehimalayanbazaar.com/" class="button">Learn More</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="static/images/pic03.jpg" alt="" /></a>
+                            <h3>Tempus ullamcorper</h3>
+                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                            <ul class="actions">
+                            <li><a href="#" class="button">Learn More</a></li>
+                            </ul>
+                        </article>
+                    </div>
                 </section>
+
+                
+                <section>
+                    <form method="post" action="#">
+                        <div class="row gtr-uniform">
+                            <div class="col-6 col-12-xsmall">
+                                <input type="text" name="demo-name" id="demo-name" value="" placeholder="Enter City, State, or Zip" />
+                            </div>
+                        </form>
+                    </section>
 
                 <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
                     <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
@@ -68,39 +105,6 @@
                     to.parentNode.insertBefore(s, to);
                   })();</script><a href="https://1map.com/map-embed">1 Map</a></div>
                   
-                <!-- Section -->
-                <section>
-                    <header class="major">
-                        <h2>Stores</h2>
-                    </header>
-                    <div class="posts">
-                        <article>
-                            <a href="https://himalayan-indian-grocery.business.site/" class="image"><img src="static/images/store1bg.jpg" alt="" /></a>
-                            <h3>Himalayan Grocery Store & Kitchen</h3>
-                            <p> </p>
-                            <ul class="actions">
-                            <li><a href="https://himalayan-indian-grocery.business.site/" class="button">Explore</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <a href="https://www.thehimalayanbazaar.com/" class="image"><img src="static/images/store2bg.jpg" alt="" /></a>
-                            <h3>The Himalayan Bazaar</h3>
-                            <p></p>
-                            <ul class="actions">
-                            <li><a href="https://www.thehimalayanbazaar.com/" class="button">Explore</a></li>
-                            </ul>
-                        </article>
-                        <article>
-                            <a href="#" class="image"><img src="static/images/pic03.jpg" alt="" /></a>
-                            <h3>Tempus ullamcorper</h3>
-                            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                            <ul class="actions">
-                            <li><a href="#" class="button">More</a></li>
-                            </ul>
-                        </article>
-                    </div>
-                </section>
-
                 <!-- Section -->
                 <section>
                     <header class="major">
@@ -127,6 +131,7 @@
                     <ul>
                     <li><a href="{{ url_for('index')}}">Homepage</a></li>
                     <li><a href="{{ url_for('login')}}">Login</a></li>
+                    <li><a href="{{ url_for('shopHome')}}">Shops</a></li>
                     <li><a href="elements.html">Elements</a></li>
                     <li>
                     <span class="opener">Submenu</span>
