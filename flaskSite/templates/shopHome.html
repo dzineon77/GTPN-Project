@@ -33,34 +33,51 @@
 								</header>
 
 							<!-- Content -->
+							
 								<section>
+									
 									<header class="main">
-										<h1>Shops</h1>
+										<h1>Local Businesses</h1>
 									</header>
 
-									<span class="image main"><img src="/static/images/pic11.jpg" alt="" /></span>
-
-									<p>Explore some local businesses in the area!</p>
-
-									<div class="col-12">
-										<select name="categoryfilter" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Restaurant</option>
-											<option value="1">Clothing</option>
-											<option value="1">Accessories</option>
-											<option value="1">Art</option>
-										</select>
-									</div>
+									<span class="image main"><img src="/static/images/bazaarHomepage.jpg" alt="" /></span>
+								</section>
+								
+								{% if reqmethod == 'POST'%}
+									<section>
+										<div class = "container">
+										<header class="major">
+											<h2> Showing results near: {{location}}</h2>
+										</header>
+										<div style="overflow:hidden;resize:none;max-width:100%;width:500px;height:500px;"><div id="google-maps-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/search?q=Tibetan+New+York&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="our-googlemap-code" rel="nofollow" href="https://kbj9qpmy.com/bp" id="enable-maps-data">Internet Provider</a><style>#google-maps-display .text-marker{}.map-generator{max-width: 100%; max-height: 100%; background: none;</style></div>
+									</section>
+								{% endif%}
+							
 									
 							<!-- Section -->
 							<section>
 								<div class = "container">
-								<header class="major">
-								</br>
-									<h2>Browse stores here!</h2>
-								</header>
+								{% if reqmethod == 'GET'%}	
+									<header class="major">
+										<h2>Explore our full catalog of local businesses!</h2>
+									</header>
+								{% endif %}
+								{% if reqmethod == 'POST'%}	
+									<header class="major">
+										<h2>Explore local businesses near: {{location}}</h2>
+									</header>
+								{% endif %}
+								<div class="col-12">
+									<select name="categoryfilter" id="demo-category">
+										<option value="">- Category -</option>
+										<option value="1">Restaurant</option>
+										<option value="1">Clothing</option>
+										<option value="1">Accessories</option>
+										<option value="1">Art</option>
+									</select>
+								</div>
 							</div>
-								
+						</section>
 								<div class="posts">
 									{% for store in shopUrls %}
 									<article>
@@ -97,7 +114,6 @@
 										<li><a href="{{ url_for('index')}}">Homepage</a></li>
 										<li><a href="{{ url_for('login')}}">Login</a></li>
 										<li><a href="{{ url_for('shopHome')}}">Shops</a></li>
-										<li><a href="elements.html">Elements</a></li>
 										<li>
 											<span class="opener">Submenu</span>
 											<ul>

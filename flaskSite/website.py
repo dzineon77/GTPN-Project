@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from flask import request
 import flask
 import pandas as pd
 # Create the application.
@@ -28,21 +29,21 @@ def login():
     return flask.render_template('login.html', name="login")
 
 
-@APP.route('/elements/')
-def elements():
-    """ Displays the index page accessible at '/'
-    """
-    return flask.render_template('elements.html')
-
-
-@APP.route('/shop/')
+@APP.route('/shop/', methods=['GET', 'POST'])
 def shopHome():
 
-    tempstorenames = []
-    for i in range(len(fo['URLS'])):
-        tempstorenames.append(shopUrls[i].lstrip("https://"))
+    if request.method == 'POST':
+        reqmethod = str(request.method)
+        location = request.form.get('location')
+        return flask.render_template('shopHome.html', name="shopHome", reqmethod=reqmethod, location=location)
 
-    return flask.render_template('shopHome.html', name="shopHome", shopUrls=shopUrls, shopContactInfo=shopContactInfo, tempstorenames=tempstorenames)
+    elif request.method == 'GET':
+        reqmethod = str(request.method)
+        tempstorenames = []
+        for i in range(len(fo['URLS'])):
+            tempstorenames.append(shopUrls[i].lstrip("https://"))
+
+        return flask.render_template('shopHome.html', name="shopHome", reqmethod=reqmethod, shopUrls=shopUrls, shopContactInfo=shopContactInfo, tempstorenames=tempstorenames)
 
 
 @APP.route('/shop/<name>/')
