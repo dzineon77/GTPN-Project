@@ -64,7 +64,7 @@
 								<div class="posts">
 									{% for store in shopUrls %}
 									<article>
-										<a href="#" class="image"><img src="/static/images/pic01.jpg" alt="" /></a>
+										<a href="/shop/{{ tempstorenames[loop.index-1] }}/" class="image"><img src="/static/images/pic01.jpg" alt="" /></a>
 										<h3>{{ tempstorenames[loop.index-1] }}</h3>
 										<p>{{ shopContactInfo[loop.index-1] }}</p>
 										<ul class="actions">
